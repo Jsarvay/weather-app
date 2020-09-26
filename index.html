@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <header>
+        <h1>Weather App</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <!--Set up a column on the left side for users to search for cities and log previously searched cities-->
+                <div class= "col-md-3 city-col">
+                    <div class="form-group">
+                        <label class="search-head" for="city-search">Search for a City</label>
+                        <input type="city" class="form-control" id="city-input" aria-describedby="city-help"><button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="previous-city"></div>
+                </div>
+
+                <!--Display current city, current date, and current weather-->
+                    <div class="col-md-8 city-col">
+                        <div class="current-city">
+                            <h2>Oh the Places You'll Go....</h2>
+                        </div>
+                    </div>
+
+            </div>
+            
+            <!--Display five day weather forecast-->
+            <br>
+            <div class="row">
+                <div class="col-md-12 city-col">
+                    <h3>Five Day Forecast</h3>
+                    <div class="five-day"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
