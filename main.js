@@ -3,7 +3,7 @@ var storedCities = "";
 var city = "";
 var lastCity = "";
 
-function citySearch(){
+/*function citySearch(){
     var queryURL = `api.openweathermap.org/data/2.5/weather?q=${city}&appid=7117266e273e49cf62493c79487eb680`;
     console.log(queryURL);
 
@@ -13,7 +13,7 @@ function citySearch(){
     }).then(function (response) {
         console.log(response);
     })
-}
+}*/
 
 //Get city info from user hitting the submit button
     $(".submit").on("click", function(event){
@@ -27,7 +27,17 @@ function citySearch(){
             lastCity = JSON.stringify($("#city-input").val());
             localStorage.setItem("lastCity", lastCity);
             $("#city-input").val("");
-            citySearch();
+            //citySearch();
+
+            var queryURL = `api.openweathermap.org/data/2.5/weather?q=${city}&appid=7117266e273e49cf62493c79487eb680`;
+            console.log(queryURL);
+        
+            $.ajax({
+                url: queryURL,
+                method: "GET",
+            }).then(function (response) {
+                console.log(response);
+            });
         }
     })
 });
