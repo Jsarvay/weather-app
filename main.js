@@ -1,18 +1,29 @@
 $(document).ready(function() {
-var storedCities = "";
+
+var recentCities = [];
 var lastCity = "";
 
-/*function citySearch(){
-    var queryURL = `api.openweathermap.org/data/2.5/weather?q=${city}&appid=7117266e273e49cf62493c79487eb680`;
-    console.log(queryURL);
+function init(){
+    var storedCities = JSON.parse(localStorage.getItem("stored"))
+    if(storedCities !== null){
+        recentCities = storedCities;
+        cityButton();
+    }
+};
 
-    $.ajax({
-        url: queryURL,
-        method: "GET",
-    }).then(function (response) {
-        console.log(response);
-    })
-}*/
+function storeCity() {
+    localStorage.setItem("stored", JSON.stringify(recentCities));
+};
+
+function cityButton() {
+    $(".previous-city").empty();
+    for(var j = 0; j < recentCities.length; j++){
+        $(".previous-city").append($("<button>").text(recentCities[j]));
+    }
+};
+
+init();
+
 
 //Get city info from user hitting the submit button
     $(".submit").on("click", function(event){
@@ -25,6 +36,7 @@ var lastCity = "";
             var cityFormat = city.split(" ");
             var search = cityFormat.join(" ");
             console.log(city);
+            recentCities.push($("#city-input").val());
             lastCity = JSON.stringify($("#city-input").val());
             localStorage.setItem("lastCity", lastCity);
             $("#city-input").val("");
@@ -101,12 +113,12 @@ var lastCity = "";
                         var farForeFixed = parseFloat(farFore).toFixed(1);
                         $(`.${i}`).append($("<p>").text("Temp: " + farForeFixed + " F"));
                         $(`.${i}`).append($("<p>").text("Humidity: " + five.list[i].main.humidity + " %"));
-
-
                     }
                 });
-
             });
+            storeCity();
+            cityButton();
         }
     })
+
 });

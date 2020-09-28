@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(5, 41, 41);
+    background-color: black;
     font-family: 'Architects Daughter', cursive;
 }
 
@@ -9,6 +9,10 @@ h1 {
     margin: 20px;
     border: solid 2px black;
     background-image: radial-gradient( yellow 15%, orange 60%);
+}
+
+p {
+    font-weight: bold;
 }
 
 .city-col {
@@ -23,6 +27,10 @@ h1 {
 }
 
 button {
+    background-image: radial-gradient( yellow 15%, orange 60%);
+}
+
+.submit {
     background-image: radial-gradient( yellow 15%, orange 60%);
     float: right;
 }
@@ -45,6 +53,10 @@ button {
 
 .extreme {
     background-color: #6A1B9A;
+}
+
+.card {
+    background-image: radial-gradient( yellow 15%, orange 60%);
 }
 
 .col-md-2 {
