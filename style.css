@@ -26,3 +26,34 @@ button {
     background-image: radial-gradient( yellow 15%, orange 60%);
     float: right;
 }
+
+.low {
+    background-color: #558B2F;
+}
+
+.mod {
+    background-color: #F9A825;
+}
+
+.high {
+    background-color: #EF6C00;
+}
+
+.vhigh {
+    background-color: #B71C1C;
+}
+
+.extreme {
+    background-color: #6A1B9A;
+}
+
+.col-md-2 {
+    margin: 5px;
+    overflow: hidden;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    align-content: center;
+}
