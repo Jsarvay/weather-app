@@ -43,8 +43,9 @@ var lastCity = "";
                 $(".city-name").text(response.name);
                 $(".current-city").append($("<img>").attr("src", `http://openweathermap.org/img/w/${response.weather[0].icon}.png`));
                 var far = Math.floor(response.main.temp - 273.15) * 1.80 + 32;
+                var farFixed = parseFloat(far).toFixed(1);
                 console.log(far);
-                $(".current-city").append($("<h3>").text("Temperature: " + far + " F"));
+                $(".current-city").append($("<h3>").text("Temperature: " + farFixed + " F"));
                 $(".current-city").append($("<h3>").text("Humidity: " + response.main.humidity + "%"));
                 $(".current-city").append($("<h3>").text("Wind Speed: " + response.wind.speed + " MPH"));
                 var lat = response.coord.lat;
@@ -97,7 +98,8 @@ var lastCity = "";
                         $(weatherImage).attr("class", "icon");
                         $(`.${i}`).append(weatherImage);
                         var farFore = Math.floor(five.list[i].main.temp_max - 273.15) * 1.80 + 32;
-                        $(`.${i}`).append($("<p>").text("Temp: " + farFore + " F"));
+                        var farForeFixed = parseFloat(farFore).toFixed(1);
+                        $(`.${i}`).append($("<p>").text("Temp: " + farForeFixed + " F"));
                         $(`.${i}`).append($("<p>").text("Humidity: " + five.list[i].main.humidity + " %"));
 
 
