@@ -28,6 +28,7 @@ p {
 
 button {
     background-image: radial-gradient( yellow 15%, orange 60%);
+    margin: 5px;
 }
 
 .submit {
